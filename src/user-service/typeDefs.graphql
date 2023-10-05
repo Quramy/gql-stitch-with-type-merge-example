@@ -1,0 +1,11 @@
+directive @internal on FIELD_DEFINITION
+
+type User {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  user(id: ID!): User
+  users(ids: [ID!]!): [User]! @internal
+}
